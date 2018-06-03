@@ -3,6 +3,7 @@ rollup.config.js
 docs
 test
 src
-tooling/serve.js
+tooling
 .babelrc
 index.html
+_layouts
