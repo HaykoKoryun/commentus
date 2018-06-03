@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Commentus</title>
+  </head>
+  <body>
+    <div id="string-target"></div>
+    <script src="main.js"></script>
+    <div id="node-target"></div>
+    <script>
+      var first = new Commentus('first!');
+      var last = new Commentus('last!', { position: 'last' });
+      var stringTarget = new Commentus('string-target', { position: 'target', target: '#string-target' });
+      var nodeTarget = new Commentus('node-target', { position: 'target', target: document.querySelector('#node-target') });
+    </script>
+  </body>
+</html>
