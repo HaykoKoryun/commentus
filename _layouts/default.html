@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+
+{% seo %}
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>{{ site.title | default: site.github.repository_name }}</h1>
+        <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+
+        <section id="downloads">
+          {% if site.show_downloads %}
+            <a href="{{ site.github.zip_url }}" class="btn">Download as .zip</a>
+            <a href="{{ site.github.tar_url }}" class="btn">Download as .tar.gz</a>
+          {% endif %}
+          <a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        {{ content }}
+      </section>
+    </div>
+
+    {% if site.google_analytics %}
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', '{{ site.google_analytics }}', 'auto');
+        ga('send', 'pageview');
+      </script>
+    {% endif %}
+
+    <script src="dist/commentus.min.js"></script>
+    <script>
+      (function()
+      { var jokes =
+        [ [ 'Knock knock.'
+          , 'Race condition.'
+          , 'Who\'s there?'
+          ]
+        , [ 'What part of the bathroom can handle water concurrently?'
+          , 'async'
+          ]
+        , [ 'What\'s the difference between a dentist and a web page?'
+          , 'The doctype'
+          ]
+        , [ 'How long does a loop last?'
+          , 'For a while'
+          ]
+        , [ 'Why don\'t people laugh when I tell this joke?'
+          , 'It isn\'t funny, it is just a regular expression.'
+          ]
+        ];
+
+        for(var i = 0; i < jokes.length; ++i)
+        {
+          var _joke = jokes[i];
+
+          for(var j = 1; j < _joke.length; ++j)
+          {
+            if(j % 2 == 1)
+            {
+              _joke.splice(j, 0, '...');
+              ++j;
+            }
+          }
+
+          var string = _joke[0];
+
+          for(var j = 1; j < _joke.length; ++j)
+          {
+            string += '\n' + _joke[j];
+            _joke[j] = string;
+          }
+        }
+
+        var joke;
+
+        var _commentus = new Commentus();
+
+        function nextTick()
+        { if(joke.step == jokes[joke.index].length - 1)
+          { pickRandomJoke();
+          }
+          else
+          { ++joke.step;
+          }
+          update();
+        }
+
+        function pickRandomJoke()
+        { joke =
+          { index: Math.floor(Math.random() * jokes.length)
+          , step: 0
+          };
+        }
+
+        function update()
+        { _commentus.update(jokes[joke.index][joke.step]);
+        }
+
+        pickRandomJoke();
+        update();
+
+        setInterval(nextTick, 1500);
+      })();
+    </script>
+  </body>
+</html>
