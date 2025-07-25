@@ -4,14 +4,14 @@ Did you know that `HTML` comments are actual elements? You can create them just 
 
 Inspired by humorous comments like the ones below:
 
-<center> 
+<div align="center"> 
   <img src="docs/500px.png" width="600" height="auto">
   <p>500px.com</p>
   <img src="docs/maddox.png" width="600" height="auto">
   <p>maddox.xmission.com</p>
   <img src="docs/digg.png" width="600" height="auto">
   <p>digg.com</p>
-</center>
+</div>
 
 ### Usage
 ```javascript
