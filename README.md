@@ -1,4 +1,13 @@
-<h1 align="center">֎ COMMENTUS ֍</h1>  
+<h1 align="center">֎ COMMENTUS ֍</h1>
+<div align="center">
+
+![built by: neckbeards](docs/badges/built-by-neckbeards.svg) ![built by: codebabes](docs/badges/built-by-codebabes.svg)  
+
+![compatability: betamax](docs/badges/compatibility-betamax.svg) ![makes people | smile](docs/badges/makes-people-smile.svg)  
+
+![you didn't | ask for this](docs/badges/you-never-asked-for-this.svg)
+
+</div>
 
 Did you know that `HTML` comments are actual elements? You can create them just like you would a regular ol' `div` and even update the text inside the element. 
 
